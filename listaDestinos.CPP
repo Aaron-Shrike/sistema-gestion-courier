@@ -1,162 +1,159 @@
 // DESTINO :
 
 class Destino{
- private:
-   char destino[MAX];
+  private:
+   	char destino[MAX];
 	char abreviatura[MAX];
 
- public:
+  public:
 	Destino(){
-      this->destino[0] = NULL;
-   	this->abreviatura[0] = NULL;
-   }
+      	this->destino[0] = NULL;
+   		this->abreviatura[0] = NULL;
+   	}
 
-   virtual void leer(){
+   	virtual void leer(){
+	   	cin.getline(this->destino,MAX-1);
+	   	cout << " > Abreviatura : "; cin.getline(this->abreviatura,MAX-1);
+   	}
 
-	   cin.getline(this->destino,MAX-1);
-	   cout << " > Abreviatura: "; cin.getline(this->abreviatura,MAX-1);
-   }
+   	void mostrar(){
+   		cout << "	Destino : " << this->destino << endl;
+      	cout << "	Abreviatura : " << this->abreviatura << endl;
+   	}
 
-   void mostrar(){
-
-   	cout << "	Destino: " << this->destino << endl;
-      cout << "	Abreviatura: " << this->abreviatura << endl;
-   }
-
-   ListaTarifas & guardarListaTarifas();
+   	ListaTarifas & guardarListaTarifas();
 
 	void leerTarifaDepartamento(float &ess, float &add){
-      int op;
+      	int op;
 		float estandar;
-   	float masKilo;
+   		float masKilo;
 
-      Tarifa *tarifa;
-      ListaTarifas & tari = guardarListaTarifas();
+      	Tarifa *tarifa;
+      	ListaTarifas & tari = guardarListaTarifas();
 
-   	cout << "    Listado de Tarifas"<<endl;
-   	cout << endl;
-   	cout << "	    -Estandar-	-Adicional- " <<endl;
-   	for(int i=0;i<tari.getN();i++){
-   		tarifa = tari.get(i);
+   		cout << "    Listado de Tarifas"<<endl;
+   		cout << endl;
+   		cout << "	    -Estandar-	-Adicional- " <<endl;
+   		for(int i=0;i<tari.getN();i++){
+   			tarifa = tari.get(i);
 
-         estandar = tarifa->getEstandar();
-         masKilo = tarifa->getMasKilo();
-         cout << "	" << (i+1) << ".     " << estandar << "    	    " << masKilo <<endl;
+         	estandar = tarifa->getEstandar();
+         	masKilo = tarifa->getMasKilo();
+         	cout << "	" << (i+1) << ".     " << estandar << "    	    " << masKilo <<endl;
 		}
-      cout << endl;
-   	op = leeEntero(" > Tipo de tarifa: ",1,tari.getN()," *Tipo no valido");
+      	cout << endl;
+   		op = leeEntero(" > Tipo de tarifa : ",1,tari.getN(),"\t* Tipo no valido");
 
-   	tarifa = tari.get(op-1);
+   		tarifa = tari.get(op-1);
 
 		ess = tarifa->getEstandar();
-   	add = tarifa->getMasKilo();
-   }
+   		add = tarifa->getMasKilo();
+   	}
 
-   void getDestino(char *aux){
-   	strcpy(aux,this->destino);
-   }
+   	void getDestino(char *aux){
+   		strcpy(aux,this->destino);
+   	}
 
-   void getAbreviatura(char *aux){
-   	strcpy(aux,this->abreviatura);
-   }
+   	void getAbreviatura(char *aux){
+   		strcpy(aux,this->abreviatura);
+   	}
 
-   virtual int getTipoDestino() = 0;
-   //1: Nacional,2: Internacional
+   	virtual int getTipoDestino() = 0;
+   	//1: Nacional,2: Internacional
 };
 
 class NodoDestino{
- friend class ListaDestinos;
- private:
+  friend class ListaDestinos;
+  private:
 	Destino *destino;
-   NodoDestino *sgte;
+   	NodoDestino *sgte;
 
- public:
+  public:
 	NodoDestino(){
-      this->destino = NULL;
-   	this->sgte = NULL;
-   }
+      	this->destino = NULL;
+   		this->sgte = NULL;
+   	}
 
-   ~NodoDestino(){
-   	if(this->destino != NULL){
-      	delete this->destino;
-      }
-   }
+   	~NodoDestino(){
+   		if(this->destino != NULL){
+      		delete this->destino;
+      	}
+   	}
 };
 
 class ListaDestinos{
- private:
+  private:
 	int n;
-   NodoDestino *cab;
+   	NodoDestino *cab;
 
  public:
 	ListaDestinos(){
-   	this->n =0;
-      this->cab = NULL;
-   }
+   		this->n =0;
+      	this->cab = NULL;
+   	}
 
-   ~ListaDestinos(){
-   	NodoDestino *temp;
-      while(this->cab != NULL){
-      	temp = this->cab;
-         this->cab = temp->sgte;
-         delete temp;
-      }
-      this->n=0;
-   }
+   	~ListaDestinos(){
+   		NodoDestino *temp;
+      	while(this->cab != NULL){
+      		temp = this->cab;
+         	this->cab = temp->sgte;
+         	delete temp;
+      	}
+      	this->n=0;
+   	}
 
-   void agregar(Destino *destino){
-   	NodoDestino *nuevo = new NodoDestino();
-      NodoDestino *ultimo;
+   	void agregar(Destino *destino){
+   		NodoDestino *nuevo = new NodoDestino();
+      	NodoDestino *ultimo;
 
-      nuevo->destino = destino;
+      	nuevo->destino = destino;
 
-      if(this->cab == NULL){
-      	this->cab = nuevo;
-      }else{
-      	ultimo = this->cab;
-         while(ultimo->sgte != NULL){
-         	ultimo = ultimo->sgte;
-         }
-         ultimo->sgte = nuevo;
-      }
-      this->n++;
-   }
+      	if(this->cab == NULL){
+      		this->cab = nuevo;
+      	}else{
+      		ultimo = this->cab;
+         	while(ultimo->sgte != NULL){
+         		ultimo = ultimo->sgte;
+         	}
+         	ultimo->sgte = nuevo;
+      	}
+      	this->n++;
+   	}
 
-   int getN(){
-   	return this->n;
-   }
+   	int getN(){
+   		return this->n;
+   	}
 
-   Destino *get(int pos){
-   	NodoDestino *temp;
+   	Destino *get(int pos){
+   		NodoDestino *temp;
 
-      if(pos>=0 && pos<this->n){
-      	temp = this->cab;
-      	for(int i=0;i<pos;i++){
-         	temp = temp->sgte;
-         }
-         return temp->destino;
-      }else{
-      	return NULL;
-      }
-   }
+      	if(pos>=0 && pos<this->n){
+      		temp = this->cab;
+      		for(int i=0;i<pos;i++){
+         		temp = temp->sgte;
+         	}
+         	return temp->destino;
+      	}else{
+      		return NULL;
+      	}
+   	}
 
-   /*Destino *buscarDestino(char *destinoBuscar){
-   	NodoDestino *temp = this->cab;
-      Destino *aux = NULL;
+   	/*Destino *buscarDestino(char *destinoBuscar){
+   		NodoDestino *temp = this->cab;
+      	Destino *aux = NULL;
 		char auxDepartamento[MAX];
 
 		while(temp != NULL){
-      	temp->destino.getDepartamento(auxDepartamento);
+      		temp->destino.getDepartamento(auxDepartamento);
 
-         if(strcmpi(auxDepartamento,destinoBuscar) == 0){
+         	if(strcmpi(auxDepartamento,destinoBuscar) == 0){
+            	aux = &(temp->destino);
 
-            aux = &(temp->destino);
+         		return aux;
+         	}
+         	temp = temp->sgte;
+      	}
 
-         	return aux;
-         }
-         temp = temp->sgte;
-      }
-
-      return NULL;
-   }*/
+      	return NULL;
+   	}*/
 };
