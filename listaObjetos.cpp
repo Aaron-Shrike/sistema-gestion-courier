@@ -95,7 +95,7 @@ class Objeto{
    		}
 
       	cout << endl;
-	cin.ignore();
+      	cin.ignore();
       	cout << " > Descripcion : "; cin.getline(this->descripcion,LIM-1);
       	cout << endl;
    	}
