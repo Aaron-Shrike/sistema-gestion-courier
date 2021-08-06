@@ -535,10 +535,10 @@ void estadisticaObjetos(){
       	}
    	}
 
-   	cout << "	Regular: " << contador[0] << endl;
-   	cout << "	E-commerce: " << contador[1] << endl;
-   	cout << "	Internacional: " << contador[2] << endl;
-   	cout << "	Eventos: " << contador[3] << endl;
+   	cout << "	Regular : " << contador[0] << endl;
+   	cout << "	E-commerce : " << contador[1] << endl;
+   	cout << "	Internacional : " << contador[2] << endl;
+   	cout << "	Eventos : " << contador[3] << endl;
 
    	cout << endl;
    	cout << "------------------------------------------" <<endl;
@@ -611,11 +611,11 @@ void simulacionBoleta(){
    		cout << "    		BOLETA DE VENTA ELECTRONICA" << endl;
       	cout << "    		 B011-" << numRemito << anio << "  " << dia << "/" << mes << "/" << anio << endl;
       	cout << endl;
-      	cout << " DNI: " << dni << endl;
-      	cout << " CLIENTE: " << nombre << endl;
-      	cout << " DIRECCION: " << direccion << endl;
-      	cout << " TELEFONO: " << telefono << endl;
-      	cout << " CORREO: " << correo << endl;
+      	cout << " DNI : " << dni << endl;
+      	cout << " CLIENTE : " << nombre << endl;
+      	cout << " DIRECCION : " << direccion << endl;
+      	cout << " TELEFONO : " << telefono << endl;
+      	cout << " CORREO : " << correo << endl;
       	cout << endl;
       	cout << " Para el seguimiento de sus envios en la pagina web o" << endl;
       	cout << " contact center, puede realizarlo mediante el Nro. REMITO:" << endl;
@@ -635,7 +635,7 @@ void simulacionBoleta(){
       	cout << " VUELTO					S/.	" << vuelto << endl;
       	cout << endl;
       	cout << endl;
-      	cout << " DIG.: " << dignatario << "		 HORA: " << hora << ":" << minuto;
+      	cout << " DIG.: " << dignatario << "		 HORA : " << hora << ":" << minuto;
       	if(hora>=12){
       		cout << " PM" << endl;
       	}else{
