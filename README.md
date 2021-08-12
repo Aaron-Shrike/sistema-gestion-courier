@@ -107,20 +107,94 @@ Lista todos los reportes que se pueden efectuar los datos registrados previament
 </div>
 
 ### Datos registrados
+Listado de los diferentes datos registrados.
+
+<div align="center">
+<img src="media/reporte1-menu.png">
+<p><strong>Imagen:</strong> Menú de los datos registrados.</p>
+</div>
 
 #### Datos de la courier
+<div align="center">
+<img src="media/r1-opcion1.png">
+<p><strong>Imagen:</strong> Datos registrados de la courier.</p>
+</div>
 #### Listado de tarifas
+<div align="center">
+<img src="media/r1-opcion2.png">
+<p><strong>Imagen:</strong> Listado de las tarifas registradas.</p>
+</div>
 #### Listado de destinos
+<div align="center">
+<img src="media/r1-opcion3.png">
+<p><strong>Imagen:</strong> Listado de los destinos registrados.</p>
+</div>
 #### Listado de clientes
+<div align="center">
+<img src="media/r1-opcion4.png">
+<p><strong>Imagen:</strong> Listado los clientes registrados.</p>
+</div>
 #### Listado de envíos
+<div align="center">
+<img src="media/r1-opcion5.png">
+<p><strong>Imagen:</strong> Listado de los envíos registrados.</p>
+</div>
 
 ### Listar envíos
+Lista el DNI del remitente, su nombre completo, el tipo de envío y la abreviatura del destino del envío.
+
+<div align="center">
+<img src="media/reporte2.png">
+<p><strong>Imagen:</strong> Reporte 2.</p>
+</div>
+
 ### Listado de destinos según tipo
+Muestra los destinos registrados según el tipo de destino (nacional o internacional).
+
+<div align="center">
+<img src="media/reporte3.png">
+<p><strong>Imagen:</strong> Reporte 3.</p>
+</div>
+
 ### Listado de objetos según tipo de envío
+Lista el nombre del objeto y el peso de este según el tipo de envío (Regular, E-commerce, Internacional y Eventos).
+
+<div align="center">
+<img src="media/reporte4.png">
+<p><strong>Imagen:</strong> Reporte 4.</p>
+</div>
+
 ### Listado de consignados según tipo de envío
+Lista el número de DNI y el nombre completo de los consignados según el tipo de envío (Regular, E-commerce, Internacional y Eventos).
+
+<div align="center">
+<img src="media/reporte5.png">
+<p><strong>Imagen:</strong> Reporte 5.</p>
+</div>
+
 ### Estadística de objetos
+Muestra la cantidad de objetos registrados en los envíos por el tipo de envió envío (Regular, E-commerce, Internacional y Eventos).
+
+<div align="center">
+<img src="media/reporte6.png">
+<p><strong>Imagen:</strong> Reporte 6.</p>
+</div>
+
 ### Simulación de boleta
+Simula una boleta de envió, ingresándole el número de remito y posteriormente la cantidad con la que realizo el pago.
+
+<div align="center">
+<img src="media/reporte7.png">
+<p><strong>Imagen:</strong> Rreporte 7.</p>
+</div>
+
 ### Consultar estado de envío
+Consulta el estado de un envío con el número de remito, mostrando la hora en la que se registró, salió a ruta y llego a su destino; además de mostrar los detalles registrados a este envío.
+
+<div align="center">
+<img src="media/reporte8.png">
+<p><strong>Imagen:</strong> Reporte 8.</p>
+</div>
 
 ## Autores
 - Ramirez Benites Rafael
