@@ -119,21 +119,25 @@ Listado de los diferentes datos registrados.
 <img src="media/r1-opcion1.png">
 <p><strong>Imagen:</strong> Datos registrados de la courier.</p>
 </div>
+
 #### Listado de tarifas
 <div align="center">
 <img src="media/r1-opcion2.png">
 <p><strong>Imagen:</strong> Listado de las tarifas registradas.</p>
 </div>
+
 #### Listado de destinos
 <div align="center">
 <img src="media/r1-opcion3.png">
 <p><strong>Imagen:</strong> Listado de los destinos registrados.</p>
 </div>
+
 #### Listado de clientes
 <div align="center">
 <img src="media/r1-opcion4.png">
 <p><strong>Imagen:</strong> Listado los clientes registrados.</p>
 </div>
+
 #### Listado de envíos
 <div align="center">
 <img src="media/r1-opcion5.png">
